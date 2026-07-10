@@ -11,10 +11,13 @@ if choice == 1:
     print(names)
 elif choice == 2:
     name = input("Ad daxil edin: ")
-    if name not in names:
-        print("Ad tapılmadı")
+    if name == "":
+        print("Error")
     else:
-        names.remove(name)
-        print(names)
+        if name not in names:
+            print("Ad tapılmadı")
+        else:
+            names.remove(name)
+            print(names)
 else:
     print("Error")
