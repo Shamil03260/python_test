@@ -101,12 +101,9 @@ list3 = list1 + list2
   
 print(f"Birləşdirilmiş list: {list3}")
 
-list3.pop(0)
-list3.pop(1)
-list3.pop(2)
+del list3[0:3]
 
-list3.pop()
-list3.pop()
+del list[-1:-2]
 
 print(f"List yeniləndi: {list3}")
 
