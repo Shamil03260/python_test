@@ -103,7 +103,7 @@ print(f"Birləşdirilmiş list: {list3}")
 
 del list3[0:3]
 
-del list[-1:-2]
+del list[-2:-1]
 
 print(f"List yeniləndi: {list3}")
 
