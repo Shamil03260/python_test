@@ -9,3 +9,4 @@ else:
         i += 1
         answer = number * i 
         print(number, "x", i, "=", answer)
+        
