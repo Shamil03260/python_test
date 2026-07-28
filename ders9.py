@@ -232,3 +232,84 @@
 
 
 
+# Function taskları
+
+# task 1
+
+def hesabla(a, b, emeliyyat):
+    if emeliyyat == "+":
+        return a + b
+    elif emeliyyat == "-":
+        return a - b
+    elif emeliyyat == "*":
+        return a * b
+    elif emeliyyat == "/":
+        if b != 0:
+            return a / b
+        else:
+            return "Sıfıra bölmə mümkün deyil!"
+    else:
+        return "Yanlış əməliyyat!"
+
+
+# task 2
+
+def maas_hesabla(saatliq_emekhaqqi, is_saati):
+    standart_is_saati = 40
+    artiq_saatlar = 0
+    yekun_maas = 0
+
+    if is_saati > standart_is_saati:
+        artiq_saatlar = is_saati - standart_is_saati
+        yekun_maas = (standart_is_saati * saatliq_emekhaqqi) + (artiq_saatlar * saatliq_emekhaqqi)
+    else:
+        yekun_maas = is_saati * saatliq_emekhaqqi
+
+    return yekun_maas
+
+
+# task 3
+
+def sifre_yoxla(sifre):
+    if len(sifre) < 8:
+        return "Zəif Şifrə"
+
+    has_number = any(char.isdigit() for char in sifre)
+    has_upper = any(char.isupper() for char in sifre)
+    has_lower = any(char.islower() for char in sifre)
+
+    if has_number and has_upper and has_lower:
+        return "Güclü Şifrə"
+    else:
+        return "Zəif Şifrə"
+    
+
+# task 4
+
+def endirim(mehsul_qiymeti, musteri_tipi):
+    endirim_faizi = 0
+
+    if musteri_tipi == "Gold":
+        endirim_faizi = 0.2
+    elif musteri_tipi == "Silver":
+        endirim_faizi = 0.1
+    elif musteri_tipi == "Bronze":
+        endirim_faizi = 0.05
+    else:
+        endirim_faizi = 0
+
+    son_qiymet = mehsul_qiymeti * (1 - endirim_faizi)
+    return son_qiymet
+
+
+# task 5
+
+def kino_bileti(yas, telebe):
+    if yas < 12:
+        qiymet = 6
+    elif yas >= 65:
+        qiymet = 8
+    else:
+        qiymet = 12
+
+    return qiymet
