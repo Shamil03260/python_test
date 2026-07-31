@@ -1,5 +1,5 @@
 import pandas as pd 
 
-df = pd.read_csv("baza.txt", header=None)
+df = pd.read_csv("test.txt", header=None)
 
-df.to_excel("baza.xlsx", index=False)
+df.to_excel("test.xlsx", index=False)
