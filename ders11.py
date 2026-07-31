@@ -221,3 +221,78 @@
 
 
 
+
+# Libraries taskları
+
+# task 1
+
+import datetime
+
+birth_year = int(input("Doğulduğunuz il: "))
+birth_month = int(input("Doğum ayınız: "))
+birth_day = int(input("Doğum gününüz: "))
+
+birth_date = datetime.datetime(birth_year, birth_month, birth_day)
+current_date = datetime.datetime.now()
+
+age = current_date - birth_date
+
+seconds = age.total_seconds()
+minutes = seconds // 60
+hours = minutes // 60
+days = hours // 24
+
+print(f"Siz həyatda {int(seconds)} saniyə, {int(minutes)} dəqiqə, {int(hours)} saat, {int(days)} gündür ki mövcudsunuz və sizin {int(current_date.year - birth_year)} yaşınız var")
+
+
+# task 2
+
+import re
+
+text = """
+Əlaqə: 
+ali@gmail.com
+veli@yahoo.com
+test@test.az
+"""
+
+
+email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+
+
+emails = re.findall(email_pattern, text)
+
+print(emails)
+
+
+# task 3
+
+text = """
+Ali 20 yaşındadır.
+Vəli 18 yaşındadır.
+Murad 25 yaşındadır.
+"""
+
+numbers = re.findall(r'\d+', text)
+print(numbers)
+
+
+# task 4
+
+password = input("Şifrəni daxil edin: ")
+
+if re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$', password):
+    print("Şifrə düzgündür.")
+else:
+    print("Şifrə uyğun deyil.")
+    
+    
+# task 5
+
+name = input("Adınızı daxil edin: ")
+birth_date = input("Doğum gününüzü daxil edin (gün.ay.il): ")
+birth_date = datetime.datetime.strptime(birth_date, "%d.%m.%Y")
+current_date = datetime.datetime.now()
+remaining_time = birth_date - current_date
+
+print(f"Hörmətli {name}, sizin ad gününüzə {birth_date} tarixində {remaining_time.days} gün, {remaining_time.seconds // 3600} saat, {(remaining_time.seconds % 3600) // 60} dəqiqə, {remaining_time.seconds % 60} saniyə qalıb.")
