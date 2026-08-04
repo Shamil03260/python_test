@@ -58,8 +58,7 @@ c.execute("SELECT * FROM students")
 # conn.commit()
 
 
-
 for age in c:
     print(age)
     
-     
+    
