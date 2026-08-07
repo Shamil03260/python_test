@@ -125,7 +125,7 @@ import random
 
 win_or_lose = random.choice(["Qələbə", "Məğlubiyyət"])
 
-conn = sqlite3.connect("school.db")
+conn = sqlite3.connect("casino.db")
 
 cursor = conn.cursor()
 
