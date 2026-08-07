@@ -157,6 +157,17 @@ while True:
         cash = int(input("Balans: "))
         
         cursor.execute(
+            "SELECT * FROM casino WHERE login=?",
+            (login,)
+        )
+        
+        existing_user = cursor.fetchone()
+        
+        if existing_user:
+            print("Bu login artıq mövcuddur! Zəhmət olmasa başqa bir login seçin.")
+            continue
+        
+        cursor.execute(
             "INSERT INTO casino(login, password, cash) VALUES (?, ?, ?)",
             (login, password, cash)
         )
