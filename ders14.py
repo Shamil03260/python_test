@@ -132,7 +132,7 @@ cursor = conn.cursor()
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS casino(
-    login TEXT PRIMARY KEY,
+    login TEXT,
     password TEXT,
     cash INTEGER
 )              
