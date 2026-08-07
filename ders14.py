@@ -132,6 +132,7 @@ cursor = conn.cursor()
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS casino(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     login TEXT,
     password TEXT,
     cash INTEGER
