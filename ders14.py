@@ -154,9 +154,6 @@ while True:
     if choice == "1":
         
         login = input("Login: ")
-        password = input("Password: ")
-        cash = int(input("Balans: "))
-        
         cursor.execute(
             "SELECT * FROM casino WHERE login=?",
             (login,)
@@ -167,14 +164,18 @@ while True:
         if existing_user:
             print("Bu login artıq mövcuddur! Zəhmət olmasa başqa bir login seçin.")
             continue
-        
-        cursor.execute(
-            "INSERT INTO casino(login, password, cash) VALUES (?, ?, ?)",
-            (login, password, cash)
-        )
-        
-        conn.commit()
-        print("Qeydiyyat uğurla tamamlandı!")
+        else:
+            password = input("Password: ")
+            cash = int(input("Balans: "))
+            
+            
+            cursor.execute(
+                "INSERT INTO casino(login, password, cash) VALUES (?, ?, ?)",
+                (login, password, cash)
+            )
+            
+            conn.commit()
+            print("Qeydiyyat uğurla tamamlandı!")
         
     elif choice == "2":
         login = input("Login: ")
